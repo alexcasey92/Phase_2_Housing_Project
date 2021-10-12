@@ -1,4 +1,4 @@
-![seattle_banner](./images/seattle_banner.jpg)
+![seattle_banner](./Images/seattle_banner.jpg)
 
 # Analyzing House Sales and Price Indicators in King County, WA
 
