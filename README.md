@@ -53,6 +53,8 @@ Finally, we built a model that is fairly predictive of price with a R-squared of
 
 Further investigation into sought after ZIP codes is warranted. Researching commuting time to downtown Seattle, and schools could be a good indicator, with better connected properties and homes near high-achieving schools potentially being valued higher.
 
+More advanced models exist which may prove to be more accurate in predicting home values. Ensemble methods like gradient boosted decision trees would likely improve our prediction accuracy.
+
 ## For More Information
 
 Please review my full analysis in my [Jupyter Notebook](./technical_notebook.ipynb) or my [presentation](./DS_Project_Presentation.pdf).
