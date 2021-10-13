@@ -10,35 +10,14 @@ Not all home improvements are created equally, so how do you choose between remo
 
 This project seeks to advise homeowners about how home renovations might increase the estimated value of their homes.
 
-## Data Understanding
+## Data & Methods
 
-This project uses the King County House Sales dataset, which can be found in kc_house_data.csv in the data folder in this repo.
+This project uses the King County House Sales dataset, which includes 21,597 observations with 21 variables
 
-### Variable description
-Here are some brief explanations of the variables used in this project :
+The data includes many different types of information about each home sale in the County, including selling price, square footage, property type (waterfront or not), ZIP code, etc.
 
+For this project, I used regression modeling to analyze house sales in King County, which is located in the U.S. state of Washington.
 
-* **id** - unique identifier for a house
-* **date** - house was sold
-* **price** -  is prediction target
-* **bedrooms** -  # of Bedrooms
-* **bathrooms** -  # of bathrooms
-* **sqft_living** -  footage of the home
-* **sqft_lot** -  footage of the lot
-* **floors** -  floors (levels) in house
-* **waterfront** - house with waterfront view
-* **view** - has been viewed (prior to being sold)
-* **condition** - condition of house
-* **grade** - overall grade given to the housing unit, based on King County grading system
-* **sqft_above** - square footage of house apart from basement
-* **sqft_basement** - square footage of the basement
-* **yr_built** - year built
-* **yr_renovated** - year when house was renovated
-* **zipcode** - zipcode
-* **lat** - latitude coordinate
-* **long** - longitude coordinate
-* **sqft_living15** - the square footage of interior housing living space for the nearest 15 neighbors
-* **sqft_lot15** - the square footage of the land lots of the nearest 15 neighbors
 
 ## Model
 
@@ -50,7 +29,7 @@ Omnibus describes the normalcy of the distribution of our residuals using skew a
 
 A change of 1 standard deviation in X is associated with a change of β standard deviations of Y. 
 
-For model 3, the dependent variable is log transformed and our independendent variables have been normalized. Interpret the coefficient as the percent increase in the dependent variable for every 1 standard deviation increase in the independent variable. Example: the coefficient of sqft_above is 0.196047. For every 1 standard deviation increase in the independent variable, our dependent variable (price) increases by about 0.20%. For x percent increase, calculate 1.x to the power of the coefficient, subtract 1, and multiply by 100. Example: For every 20% increase in the independent variable, our dependent variable increases by about (1.20^ 0.196047 – 1) * 100 = 3.6 percent.
+For model 3, the dependent variable is log transformed and our independendent variables have been normalized. Log transforms typically help strengthen the linearity between features and the target. Interpret the coefficient as the percent increase in the dependent variable for every 1 standard deviation increase in the independent variable. Example: the coefficient of sqft_above is 0.196047. For every 1 standard deviation increase in the independent variable, our dependent variable (price) increases by about 0.20%. For x percent increase, calculate 1.x to the power of the coefficient, subtract 1, and multiply by 100. Example: For every 20% increase in the independent variable, our dependent variable increases by about (1.20^ 0.196047 – 1) * 100 = 3.6 percent.
 
 ## Conclusions and Next Steps
 
