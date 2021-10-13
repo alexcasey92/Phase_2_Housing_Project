@@ -40,6 +40,17 @@ Here are some brief explanations of the variables used in this project :
 * **sqft_living15** - the square footage of interior housing living space for the nearest 15 neighbors
 * **sqft_lot15** - the square footage of the land lots of the nearest 15 neighbors
 
+## Model
+
+We interated through several models before arriving at a final model. We concluded with an R-squared value of 0.833 and an Adj. R-squared of 0.0832. Adj. R-squared describes the quality that your model’s R-squared value will never go down with additional variables, only equal or higher. Therefore, this model could look more accurate with multiple variables even if they are poorly contributing. The adjusted R-squared penalizes the R-squared formula based on the number of variables, therefore a lower adjusted score may be telling you some variables are not contributing to your model’s R-squared properly. There is a 0.001 difference in Model 3.
+
+P>|t| is one of the most important statistics in the summary. It uses the t statistic to produce the p value, a measurement of how likely your coefficient is measured through our model by chance. The p value of 	0.531 for yr_built is saying there is a 53.1% chance the yr_built variable has no affect on the dependent variable, home Price, and our results are produced by chance.
+
+Omnibus describes the normalcy of the distribution of our residuals using skew and kurtosis as measurements. A 0 would indicate perfect normalcy. Prob(Omnibus) is a statistical test measuring the probability the residuals are normally distributed. A 1 would indicate perfectly normal distribution. Skew is a measurement of symmetry in our data, with 0 being perfect symmetry. Kurtosis measures the peakiness of our data, or its concentration around 0 in a normal curve. Higher kurtosis implies fewer outliers.
+
+A change of 1 standard deviation in X is associated with a change of β standard deviations of Y. 
+
+For model 3, the dependent variable is log transformed and our independendent variables have been normalized. Interpret the coefficient as the percent increase in the dependent variable for every 1 standard deviation increase in the independent variable. Example: the coefficient of sqft_above is 0.196047. For every 1 standard deviation increase in the independent variable, our dependent variable (price) increases by about 0.20%. For x percent increase, calculate 1.x to the power of the coefficient, subtract 1, and multiply by 100. Example: For every 20% increase in the independent variable, our dependent variable increases by about (1.20^ 0.196047 – 1) * 100 = 3.6 percent.
 
 ## Conclusions and Next Steps
 
@@ -47,7 +58,10 @@ Here are some brief explanations of the variables used in this project :
 * It's become an almost hackneyed phrase, but it still has meaning
 * Where a home is located is the most important factor in it's value -- both now and in the future.
 
-Finally, we built a model that is fairly predictive of price with a R-squared of 0.831. The final model included 82 features, most of which are dummy variables for zipcodes. 
+**Square Footage Matters**
+* The top ~30 most important parameters refer to ZIP codes, but square footage contributes to value too.
+
+Finally, we built a model that is fairly predictive of price with a R-squared of 0.833. The final model included 82 features, most of which are dummy variables for zipcodes. We can interpret the RMSE as the mean error in USD, so the average of the actual price will be $97,858 more or less than our predicted price.
 
 **Next Steps**
 
